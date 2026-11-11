@@ -1,0 +1,86 @@
+{
+	"geode": "5.10.1",
+	"gd": {
+		"win": "*",
+		"android": "*"
+	},
+	"id": "yourname.perfboost",
+	"name": "PerfBoost",
+	"version": "v1.1.0",
+	"developer": "YourName",
+	"description": "Tối ưu hiệu năng cho điện thoại yếu: preset nhanh, giảm particle, tắt shader/glow, giới hạn FPS, ẩn nền/mặt đất/vệt đuôi/HUD.",
+	"tags": ["performance", "utility"],
+	"settings": {
+		"preset": {
+			"type": "string",
+			"default": "Custom",
+			"one-of": ["Custom", "Balanced", "Max Performance"],
+			"name": "Preset nhanh",
+			"description": "Custom = dùng từng tùy chọn bên dưới. Balanced = tắt shader, glow, vệt đuôi, particle tối đa 30%. Max Performance = tắt gần hết hiệu ứng (nền, mặt đất, hiệu ứng chết, particle) và giới hạn 30 FPS nếu chưa đặt FPS."
+		},
+		"max-fps": {
+			"type": "int",
+			"default": 0,
+			"min": 0,
+			"max": 120,
+			"name": "Giới hạn FPS",
+			"description": "0 = không đổi (để game tự quyết định). Đặt 30-45 để máy bớt nóng và tiết kiệm pin. Có thể không có tác dụng trên một số máy."
+		},
+		"disable-shaders": {
+			"type": "bool",
+			"default": true,
+			"name": "Tắt Shader",
+			"description": "Tắt các hiệu ứng shader (glitch, chromatic, bulge, ...) trong level. Nhẹ GPU hơn nhiều."
+		},
+		"disable-glow": {
+			"type": "bool",
+			"default": true,
+			"name": "Tắt Glow của object",
+			"description": "Không tạo glow cho object trong level."
+		},
+		"particle-percent": {
+			"type": "int",
+			"default": 30,
+			"min": 0,
+			"max": 100,
+			"name": "Lượng Particle (%)",
+			"description": "100 = bình thường, 0 = tắt hẳn particle trong level. Áp dụng cho particle mới tạo."
+		},
+		"disable-death-effect": {
+			"type": "bool",
+			"default": false,
+			"name": "Tắt hiệu ứng chết",
+			"description": "Bỏ hiệu ứng nổ khi chết, giảm giật khi đang practice/thử lại nhanh."
+		},
+		"hide-background": {
+			"type": "bool",
+			"default": false,
+			"name": "Ẩn nền (background)",
+			"description": "Ẩn sprite nền của level. Áp dụng khi vào level."
+		},
+		"hide-ground": {
+			"type": "bool",
+			"default": false,
+			"name": "Ẩn mặt đất",
+			"description": "Ẩn mặt đất và trần (chỉ là hình ảnh, không đổi gameplay). Áp dụng khi vào level."
+		},
+		"hide-progress": {
+			"type": "bool",
+			"default": false,
+			"name": "Ẩn thanh tiến độ và %",
+			"description": "Ẩn thanh tiến độ và nhãn phần trăm trong level. Áp dụng khi vào level."
+		},
+		"hide-trail": {
+			"type": "bool",
+			"default": false,
+			"name": "Ẩn vệt đuôi (trail)",
+			"description": "Ẩn vệt đuôi của người chơi (motion streak)."
+		},
+		"hide-wave-trail": {
+			"type": "bool",
+			"default": false,
+			"name": "Ẩn vệt Wave",
+			"description": "Ẩn vệt của Wave. Cẩn thận: khó nhìn đường đi của wave hơn."
+		}
+	}
+}
